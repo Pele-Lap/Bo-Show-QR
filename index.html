@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bo-QR</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .screen{
+            border: 10px solid red;
+            align-items: center;
+            justify-items: center;
+        }
+        .top{
+            background-color: red;
+            align-items: center; /* This won't do anything without display: flex or grid */
+            justify-items: center; /* This won't do anything without display: grid */
+            color: white;
+            padding: 10px;
+            /* To center content in .top, consider adding: */
+            display: flex;
+            justify-content: center;
+            width: 100vmax;
+        }
+        .image{
+            /* Remove width: 100vh; */
+            /* You can leave this empty or remove it if it's just a container */
+            text-align: center; /* To center the image horizontally if it's smaller than its container */
+        }
+        .image img{
+            max-width: 100%; /* This is the key: image will take up 100% of its parent's width but not exceed its natural size */
+            height: auto; /* This maintains the aspect ratio of the image */
+            display: block; /* Removes extra space below the image */
+            /* background-size: cover; is typically used for background-image, not img src */
+        }
+    </style>
+</head>
+<body>
+    <div class="screen">
+        <div class="top">
+            <h1>My QR</h1>
+        </div>
+        <div class="image">
+            <img src="./assets/Bo_QR.jpg" alt="My QR">
+        </div>
+    </div>
+</body>
+</html>
